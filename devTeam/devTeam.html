@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../headerStyles.css">
+    <link rel="stylesheet" href="devTeam.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="page-title">FoC</div>
+            <div class="toggle-btn" onclick="myFunction(this)">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Course</a></li>
+                    <li><a href="../project/project.html">Projects</a></li>
+                    <li><a href="../concepts/concepts.html">Concepts</a></li>
+                    <li><a href="../documentation/documentation.html">Documentation</a></li>
+                    <li><a href="devTeam.html" class="active">Dev Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <footer>
+        <p class="footer">@ Powered by <a href="https://www.ub.edu.bz/" class="ub-page" target="_blank">UB</a></p>
+    </footer>
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+
+        const body = document.body;
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset
+
+            if (currentScroll <= 0) {
+                body.classList.remove("scroll-up");
+            }
+
+            if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-up")
+                body.classList.add("scroll-down");
+            }
+
+            if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-down")
+                body.classList.add("scroll-up")
+            }
+
+
+
+            lastScroll = currentScroll;
+        })
+    </script>
+    <script src="../main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../headerStyles.css">
+    <link rel="stylesheet" href="unicode.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="page-title">FoC</div>
+            <div class="toggle-btn" onclick="myFunction(this)">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="../../project.html#uni"><img src="../backIcon.PNG" alt="backIcon" width="25px"></a></li>
+                    <li><a href="../../../index.html">Course</a></li>
+                    <li><a href="../../project.html" class="active">Projects</a></li>
+                    <li><a href="../../../concepts/concepts.html">Concepts</a></li>
+                    <li><a href="../../../documentation/documentation.html">Documentation</a></li>
+                    <li><a href="../../../devTeam/devTeam.html">Dev Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <section>
+        <h1>Project 7: UNICODE Converter</h1>
+        <div class="container">
+            <div class="form">
+                <span class="message">Enter a UNICODE Number:</span>
+                <input type="tell" id="input" placeholder="Ex. 1F9B7" autofocus>
+                <button id="convert-btn">Convert</button>
+    
+                <span class="message">UNICODE Value: </span>
+                <span class="message" id="unicode-value"></span>
+            </div>
+            
+            <div class="slider">
+                <span id="slide-1"></span>
+                <span id="slide-2"></span>
+                <span id="slide-3"></span>
+                <div class="image-container">
+                    <img src="uni1.jpg" class="slide" width="500" height="300" />
+                    <img src="uni2.jpg" class="slide" width="500" height="300" />
+                  <img src="uni3.jpg" class="slide" width="500" height="300" />
+                </div>
+                <div class="buttons">
+                  <a href="#slide-1"></a>
+                  <a href="#slide-2"></a>
+                  <a href="#slide-3"></a>
+                </div>
+              </div>
+    </section>
+    
+
+    <footer>
+        <p class="footer">@ Powered by <a href="https://www.ub.edu.bz/" class="ub-page" target="_blank">UB</a></p>
+    </footer>    
+    
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+
+        const body = document.body;
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset
+
+            if (currentScroll <= 0) {
+                body.classList.remove("scroll-up");
+            }
+
+            if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-up")
+                body.classList.add("scroll-down");
+            }
+
+            if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-down")
+                body.classList.add("scroll-up")
+            }
+
+
+
+            lastScroll = currentScroll;
+        })
+    </script>
+    <script src="../../../main.js"></script>
+    <script src="unicode.js"></script>
+</body>
+</html>
