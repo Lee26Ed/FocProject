@@ -12,6 +12,7 @@ img {
     width: 260px;
     height: 260px;
     justify-content: center;
+    cursor: pointer;
 }
 
 p {

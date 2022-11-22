@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../headerStyles.css">
+    <link rel="stylesheet" href="mli.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,6 +29,66 @@
             </div>
         </nav>
     </header>
+    
+
+    <section class="title">
+        <h1>Project 8: A Simple Interactive Machine Language</h1>
+        <p class="note">This Project uses assembly language to add 2 integers together.</p>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="buttons">
+                <div class="btn 1">116D</div>
+                <div class="btn 2">126C</div>
+                <div class="btn 3">5120</div>
+                <div class="btn 4">306B</div>
+                <div class="btn 5">C000</div>
+            </div>
+            <div class="images" id="image">
+                <img class="mli" src="mli.png" alt="Machine language">
+            </div>
+        </div>
+    </section>
+
+
+    
+    <footer>
+        <p class="footer">@ Powered by <a href="https://www.ub.edu.bz/" class="ub-page" target="_blank">UB</a></p>
+    </footer>
+
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+
+        const body = document.body;
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset
+
+            if (currentScroll <= 0) {
+                body.classList.remove("scroll-up");
+            }
+
+            if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-up")
+                body.classList.add("scroll-down");
+            }
+
+            if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+                body.classList.remove("scroll-down")
+                body.classList.add("scroll-up")
+            }
+
+
+
+            lastScroll = currentScroll;
+        })
+    </script>
+    <script src="../../../main.js"></script>
+    <script src="mli.js"></script>
     
 </body>
 </html>
